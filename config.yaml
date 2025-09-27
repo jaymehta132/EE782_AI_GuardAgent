@@ -1,0 +1,8 @@
+paths:
+  dataDir: "data"
+  trustedFaces: "data/trustedFaces"
+
+commands:
+  activationCommand: ["guard my room", "activate security mode", "activate guard mode"]
+  deactivationCommand: ["deactivate security mode", "deactivate guard mode", "stand down"]
+  shutdownCommand: ["shutdown", "shut down", "power off"]
