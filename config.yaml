@@ -6,3 +6,7 @@ commands:
   activationCommand: ["guard my room", "activate security mode", "activate guard mode"]
   deactivationCommand: ["deactivate security mode", "deactivate guard mode", "stand down"]
   shutdownCommand: ["shutdown", "shut down", "power off"]
+
+model_config:
+  googleGemini: "YOUR_GOOGLE_GEMINI_API_KEY"
+  model: "models/gemini-1.5-flash"

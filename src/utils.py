@@ -41,3 +41,16 @@ def setup_logging(log_dir: str = "logs", logLevel: int = logging.INFO) -> None:
     logger.addHandler(fileHandler)
 
     logger.info(f"Logging initialized. Log file: {logFile}")
+
+def load_api_key(service_name: str, config: Dict[str, Any]) -> str:
+    """Load API key for a given service from the configuration."""
+    try:
+        api_keys = config.get("model_config", {})
+        api_key = api_keys.get(service_name)
+        if not api_key:
+            raise ValueError(f"API key for {service_name} not found in configuration.")
+        logger.debug(f"API key for {service_name} loaded successfully.")
+        return api_key
+    except Exception as e:
+        logger.error(f"Failed to load API key for {service_name}: {e}")
+        raise 
