@@ -4,6 +4,7 @@ from PIL import Image
 from face_recognition import load_image_file, face_encodings, compare_faces, face_locations
 import numpy as np
 from pathlib import Path
+import cv2
 
 class FaceRecognition:
     def __init__(self, known_faces: Optional[List[np.ndarray]] = None, tolerance: float = 0.6):
@@ -28,18 +29,17 @@ class FaceRecognition:
             encodings = face_encodings(image)
             if encodings:
                 self.known_faces.append(encodings[0])
-                self.logger.info(f"Added known face {image} from {trustedFacesPath}")
+                # self.logger.info(f"Added known face {image} from {trustedFacesPath}")
             else:
                 self.logger.warning(f"No faces found in {trustedFacesPath}")
 
-    def recognize_faces(self, image_path: str) -> List[bool]:
+    def recognize_faces(self, image: cv2.Mat) -> List[bool]:
         """
         Recognize faces in the given image.
 
-        :param image_path: Path to the image file to recognize faces in.
+        :param image: The image to recognize faces in.
         :return: List of booleans indicating if each detected face matches a known face.
         """
-        image = load_image_file(image_path)
         unknown_encodings = face_encodings(image)
         
         results = []

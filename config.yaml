@@ -1,12 +1,9 @@
 paths:
   dataDir: "data"
-  trustedFaces: "data/trustedFaces"
+  trustedFaces: "data/trustedFaces1"
 
 commands:
-  activationCommand: ["guard my room", "activate security mode", "activate guard mode"]
-  deactivationCommand: ["deactivate security mode", "deactivate guard mode", "stand down"]
-  shutdownCommand: ["shutdown", "shut down", "power off"]
+  activationCommand: ["guard my room", "activate security mode", "activate guard mode", "protect my room", "secure my room", "activate protection mode", "start"]
+  deactivationCommand: ["deactivate security mode", "deactivate guard mode", "stand down", "deactivate protection mode", "disarm security mode", "stop"]
+  shutdownCommand: ["shutdown", "shut down", "power off", "terminate", "exit", "quit", "close"]
 
-model_config:
-  googleGemini: "YOUR_GOOGLE_GEMINI_API_KEY"
-  model: "models/gemini-1.5-flash"

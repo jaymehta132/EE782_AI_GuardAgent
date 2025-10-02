@@ -1,0 +1,11 @@
+Github repo: https://github.com/jaymehta132/EE782_AI_GuardAgent
+Relevant codes for miletone 1: scripts.milestone1, src.agents.speechRecognition, src.agents.guardAgent, src.agents.faceRecognition, utils
+
+This file contains the exact process going on in the video:
+1. Tanay activates guard mode by saying "activate security mode"
+2. The agent captures Tanay's image and recognises its unknown (only Jay's image is in the known database).
+3. It sees an unknown face and against captures the image till Jay appears. 
+4. Once Jay appears, the agent sees a known face and asks for commands.
+5. The agent recognises the first command as "security mode" instead of "deactivate security mode" and hence asks for repeating the command.
+6. Jay says "deactivate security mode" and the agent exits security mode.
+7. After that, Jay says "shut down" which the agent recognises and hence exits the code, hence terminating it.
